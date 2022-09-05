@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBAB2E14-06B6-4EDD-9ED2-C44C4BDE7ABF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SIMS</RootNamespace>
+    <AssemblyName>SIMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bogus, Version=34.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a">
+      <HintPath>..\packages\Bogus.34.0.2\lib\net40\Bogus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.E0.MediaPlayer, Version=1.0.0.3, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Plugin.E0.MediaPlayer.1.0.2.3\lib\netstandard2.0\Plugin.E0.MediaPlayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Video, Version=0.0.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Video.0.0.2\lib\netstandard1.6\Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExitEntry\Controller\EntryController.cs" />
+    <Compile Include="ExitEntry\Controller\ExitController.cs" />
+    <Compile Include="ExitEntry\Controller\IEntryController.cs" />
+    <Compile Include="ExitEntry\Controller\IExitController.cs" />
+    <Compile Include="ExitEntry\Model\Entry.cs" />
+    <Compile Include="ExitEntry\Model\Exit.cs" />
+    <Compile Include="ExitEntry\Model\Tag.cs" />
+    <Compile Include="ExitEntry\Model\VehicleType.cs" />
+    <Compile Include="ExitEntry\Repository\EntryRepository.cs" />
+    <Compile Include="ExitEntry\Repository\ExitRepository.cs" />
+    <Compile Include="ExitEntry\Repository\IEntryRepository.cs" />
+    <Compile Include="ExitEntry\Repository\IExitRepository.cs" />
+    <Compile Include="Main\Program.cs" />
+    <Compile Include="Main\Repository\IMainRepository.cs" />
+    <Compile Include="Main\Repository\MainRepository.cs" />
+    <Compile Include="Pricelist\Controller\IPricelistController.cs" />
+    <Compile Include="Pricelist\Controller\PricelistController.cs" />
+    <Compile Include="Pricelist\Model\Pricelist.cs" />
+    <Compile Include="Pricelist\Model\Section.cs" />
+    <Compile Include="Pricelist\Repository\IPricelistRepository.cs" />
+    <Compile Include="Pricelist\Repository\PricelistRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stations\Controller\IStationsController.cs" />
+    <Compile Include="Stations\Controller\StationsController.cs" />
+    <Compile Include="Stations\Model\BillingType.cs" />
+    <Compile Include="Stations\Model\Place.cs" />
+    <Compile Include="Stations\Model\Station.cs" />
+    <Compile Include="Stations\Repository\IStationsRepository.cs" />
+    <Compile Include="Stations\Repository\StationsRepository.cs" />
+    <Compile Include="Users\Controller\AdiminstratorsController.cs" />
+    <Compile Include="Users\Controller\DriversController.cs" />
+    <Compile Include="Users\Controller\IAdiminstratorsController.cs" />
+    <Compile Include="Users\Controller\IDriversController.cs" />
+    <Compile Include="Users\Controller\IManagersController.cs" />
+    <Compile Include="Users\Controller\IUsersController.cs" />
+    <Compile Include="Users\Controller\IWorkersController.cs" />
+    <Compile Include="Users\Controller\ManagersController.cs" />
+    <Compile Include="Users\Controller\UsersController.cs" />
+    <Compile Include="Users\Controller\WorkersController.cs" />
+    <Compile Include="Users\Model\Administrator.cs" />
+    <Compile Include="Users\Model\Driver.cs" />
+    <Compile Include="Users\Model\Manager.cs" />
+    <Compile Include="Users\Model\Role.cs" />
+    <Compile Include="Users\Model\Shift.cs" />
+    <Compile Include="Users\Model\User.cs" />
+    <Compile Include="Users\Model\Worker.cs" />
+    <Compile Include="Users\Repository\AdministratorsRepository.cs" />
+    <Compile Include="Users\Repository\DriversRepository.cs" />
+    <Compile Include="Users\Repository\IAdministratorsRepository.cs" />
+    <Compile Include="Users\Repository\IDriversRepository.cs" />
+    <Compile Include="Users\Repository\IManagersRepository.cs" />
+    <Compile Include="Users\Repository\IUsersRepository.cs" />
+    <Compile Include="Users\Repository\IWorkersRepository.cs" />
+    <Compile Include="Users\Repository\ManagersRepository.cs" />
+    <Compile Include="Users\Repository\UsersRepository.cs" />
+    <Compile Include="Users\Repository\WorkersRepository.cs" />
+    <Compile Include="View\Devices\CheckDevices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Devices\CheckDevices.Designer.cs">
+      <DependentUpon>CheckDevices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Devices\DevicesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Devices\DevicesWindow.Designer.cs">
+      <DependentUpon>DevicesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Driver\BuyTagWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Driver\BuyTagWindow.Designer.cs">
+      <DependentUpon>BuyTagWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Driver\DriverMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Driver\DriverMainWindow.Designer.cs">
+      <DependentUpon>DriverMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Driver\DriversExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Driver\DriversExchange.Designer.cs">
+      <DependentUpon>DriversExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExitEntry\EntryChooseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExitEntry\EntryChooseWindow.Designer.cs">
+      <DependentUpon>EntryChooseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExitEntry\ExitChooseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExitEntry\ExitChooseWindow.Designer.cs">
+      <DependentUpon>ExitChooseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExitEntry\StationEWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExitEntry\StationEWindow.Designer.cs">
+      <DependentUpon>StationEWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pricelist\PriceCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pricelist\PriceCalculator.Designer.cs">
+      <DependentUpon>PriceCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pricelist\PricelistChanging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pricelist\PricelistChanging.Designer.cs">
+      <DependentUpon>PricelistChanging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pricelist\PricelistWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pricelist\PricelistWindow.Designer.cs">
+      <DependentUpon>PricelistWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\AllStationsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\AllStationsReport.Designer.cs">
+      <DependentUpon>AllStationsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsWindow.Designer.cs">
+      <DependentUpon>ReportsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\SingleStationReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\SingleStationReport.Designer.cs">
+      <DependentUpon>SingleStationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stations\AddPlaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Stations\AddPlaceWindow.Designer.cs">
+      <DependentUpon>AddPlaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stations\AddStationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Stations\AddStationWindow.Designer.cs">
+      <DependentUpon>AddStationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stations\BillingPlaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Stations\BillingPlaceWindow.Designer.cs">
+      <DependentUpon>BillingPlaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stations\StationsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Stations\StationsWindow.Designer.cs">
+      <DependentUpon>StationsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\AdministratorMainWondow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\AdministratorMainWondow.Designer.cs">
+      <DependentUpon>AdministratorMainWondow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\ChangePasswordWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\ChangePasswordWindow.Designer.cs">
+      <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\LogInWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\LogInWindow.Designer.cs">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\ManagerMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\ManagerMainWindow.Designer.cs">
+      <DependentUpon>ManagerMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Worker\InformThePoliceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Worker\InformThePoliceWindow.Designer.cs">
+      <DependentUpon>InformThePoliceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Worker\RampRaising.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Worker\RampRaising.Designer.cs">
+      <DependentUpon>RampRaising.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Worker\TollCollectingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Worker\TollCollectingWindow.Designer.cs">
+      <DependentUpon>TollCollectingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Worker\WorkerMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Worker\WorkerMainWindow.Designer.cs">
+      <DependentUpon>WorkerMainWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Devices\CheckDevices.resx">
+      <DependentUpon>CheckDevices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Devices\DevicesWindow.resx">
+      <DependentUpon>DevicesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Driver\BuyTagWindow.resx">
+      <DependentUpon>BuyTagWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Driver\DriverMainWindow.resx">
+      <DependentUpon>DriverMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Driver\DriversExchange.resx">
+      <DependentUpon>DriversExchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExitEntry\EntryChooseWindow.resx">
+      <DependentUpon>EntryChooseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExitEntry\ExitChooseWindow.resx">
+      <DependentUpon>ExitChooseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExitEntry\StationEWindow.resx">
+      <DependentUpon>StationEWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pricelist\PriceCalculator.resx">
+      <DependentUpon>PriceCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pricelist\PricelistChanging.resx">
+      <DependentUpon>PricelistChanging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pricelist\PricelistWindow.resx">
+      <DependentUpon>PricelistWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\AllStationsReport.resx">
+      <DependentUpon>AllStationsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\ReportsWindow.resx">
+      <DependentUpon>ReportsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\SingleStationReport.resx">
+      <DependentUpon>SingleStationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Stations\AddPlaceWindow.resx">
+      <DependentUpon>AddPlaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Stations\AddStationWindow.resx">
+      <DependentUpon>AddStationWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Stations\BillingPlaceWindow.resx">
+      <DependentUpon>BillingPlaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Stations\StationsWindow.resx">
+      <DependentUpon>StationsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\AdministratorMainWondow.resx">
+      <DependentUpon>AdministratorMainWondow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\ChangePasswordWindow.resx">
+      <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\LogInWindow.resx">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\ManagerMainWindow.resx">
+      <DependentUpon>ManagerMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Worker\InformThePoliceWindow.resx">
+      <DependentUpon>InformThePoliceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Worker\RampRaising.resx">
+      <DependentUpon>RampRaising.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Worker\TollCollectingWindow.resx">
+      <DependentUpon>TollCollectingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Worker\WorkerMainWindow.resx">
+      <DependentUpon>WorkerMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Administrators.json" />
+    <Content Include="Data\DeletedPricelists.json" />
+    <Content Include="Data\DeletedStations.json" />
+    <Content Include="Data\Drivers.json" />
+    <Content Include="Data\Managers.json" />
+    <Content Include="Data\Payments.json" />
+    <Content Include="Data\Pricelist.json" />
+    <Content Include="Data\Rampa.mp4" />
+    <Content Include="Data\Sections.json" />
+    <Content Include="Data\Stations.json" />
+    <Content Include="Data\Users.json" />
+    <Content Include="Data\Workers.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" />
+</Project>

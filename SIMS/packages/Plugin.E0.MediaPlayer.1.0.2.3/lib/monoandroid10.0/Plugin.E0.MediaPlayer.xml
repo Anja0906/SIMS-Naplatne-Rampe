@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.E0.MediaPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.ImageResizer.CrossFeature1">
+            <summary>
+            Cross Feature1
+            </summary>
+        </member>
+        <member name="T:Plugin.E0.MediaPlayer.VideoPlayerRenderer">
+            <summary>
+            Interface for Feature1
+            </summary>
+        </member>
+        <member name="M:Plugin.E0.MediaPlayer.VideoPlayerRenderer.FullScreen(System.Boolean)">
+            <summary>
+            Change screen orientation to Landscape and set video player in full screen mode.
+            </summary>
+            <param name="resizeLayout">set it True if you are using video player inside a scroo view</param>
+        </member>
+    </members>
+</doc>

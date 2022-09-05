@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.E0.MediaPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.ImageResizer.CrossFeature1">
+            <summary>
+            Cross Feature1
+            </summary>
+        </member>
+    </members>
+</doc>
